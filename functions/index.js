@@ -1,12 +1,16 @@
 const functions = require('firebase-functions');
 const express = require('express');
 const nunjucks = require('nunjucks');
+const path = require('path');
+
+const nhsComponentsPath = path.join(__dirname, 'node_modules', 'nhsuk-frontend', 'packages', 'components');
+const nhsMacrosPath = path.join(__dirname, 'node_modules', 'nhsuk-frontend', 'packages', 'macros');
 
 // Initialize express app
 const app = express();
 
 // Configure Nunjucks
-nunjucks.configure('views', {
+nunjucks.configure([nhsComponentsPath, nhsMacrosPath, 'views'], {
     autoescape: true,
     express: app,
     watch: true

@@ -8,5 +8,11 @@
 <body>
     <h1>{{ title }}</h1>
     <p>Welcome to a Firebase Function running with Nunjucks and Express!</p>
+
+    {% from "button/macro.njk" import button %}
+
+    {{ button({
+      text: "I've Donated"
+    }) }}
 </body>
 </html>
