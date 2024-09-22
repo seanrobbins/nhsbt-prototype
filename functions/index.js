@@ -6,7 +6,7 @@ const nunjucks = require('nunjucks');
 const app = express();
 
 // Configure Nunjucks
-nunjucks.configure('../views', {
+nunjucks.configure('views', {
     autoescape: true,
     express: app,
     watch: true
